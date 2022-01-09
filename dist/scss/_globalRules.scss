@@ -1,0 +1,36 @@
+@import "./variables";
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+ul,
+ol {
+  margin: 0;
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+}

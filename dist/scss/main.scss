@@ -1,0 +1,428 @@
+/****import font*******/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/*******import variables & global rules & mixin************/
+@import "./globalRules";
+@import "./mixin";
+
+/*********
+start main classes
+*********/
+.main_btn {
+  @include mainBtn;
+  font-weight: 600;
+}
+.second_btn {
+  background-color: $secondColor;
+  color: $white;
+  font-weight: 600;
+}
+.head {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: $mainColor;
+  font-size: 14px;
+  i {
+    color: #cccccc;
+    font-size: 10px;
+  }
+}
+/*********
+end main classes
+*********/
+
+/********************************
+  start header section style
+*********************************/
+.header {
+  .navbar {
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .nav-link {
+      color: $black;
+      font-weight: 600;
+      transition: $transition;
+      &:hover {
+        color: $mainColor;
+      }
+    }
+    &.scrolled {
+      background: $white !important;
+      box-shadow: $box-shadow;
+      transition: background-color 400ms linear;
+    }
+  }
+}
+
+/********************************
+  end header section style
+*********************************/
+
+/********************************
+  start home section style
+*********************************/
+.home {
+  height: 100vh;
+  padding: 200px 0;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background: #fc354c;
+  background: -webkit-linear-gradient(to right, #0abfbc, #fc354c);
+  background: linear-gradient(to right, #0abfbc, #fc354c);
+  .btn {
+    margin-top: 30px;
+    transition: $transition;
+  }
+
+  .demo_btn {
+    background-color: $mainColor;
+    color: $black;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      transition: $transition;
+      background-color: $secondColor;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: -100%;
+      transition: $transition;
+      background-color: $mainColor;
+      z-index: -1;
+    }
+    &:hover {
+      color: $white;
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+/********************************
+  end home section style
+*********************************/
+
+/********************************
+  start meeting section style
+*********************************/
+.meeting {
+  .list-group {
+    flex-direction: row;
+    .list-group-item {
+      border: none;
+      font-size: 20px;
+      font-weight: 500;
+      background-color: transparent;
+      padding: 5px 0;
+      width: 26%;
+      &.active {
+        color: $mainColor;
+        background-color: transparent;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 50%;
+          height: 3px;
+          background-color: $mainColor;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+/********************************
+  end meeting section style
+*********************************/
+
+/********************************
+  start services section style
+*********************************/
+.services {
+  .sercvices_container {
+    .service_content {
+      i {
+        font-size: 2em;
+        color: $secondColor;
+        margin: 15px 0;
+      }
+      h5 {
+        font-weight: 600;
+      }
+    }
+  }
+}
+/********************************
+  end services section style
+*********************************/
+
+/********************************
+  start contact section style
+*********************************/
+.contact {
+  background-color: $section-background;
+  .head {
+    color: $secondColor;
+    margin-bottom: 10px;
+    i {
+      color: $black;
+    }
+  }
+  .contact_text {
+    display: flex;
+    width: 100%;
+    h1 {
+      width: 30%;
+    }
+    a {
+      display: flex;
+      height: max-content;
+      margin-left: auto;
+    }
+  }
+  .contact_links {
+    margin-top: 30px;
+    .contact_icon {
+      @include circule;
+      @include centered;
+      background-color: $secondColor;
+      box-shadow: $box-shadow;
+      margin-bottom: 20px;
+      i {
+        font-size: 2em;
+        color: $white;
+      }
+    }
+    a {
+      transition: $transition;
+      width: 100%;
+      height: 100%;
+      display: block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      &:hover {
+        box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+.lSSlideOuter .lSPager.lSpg > li a {
+  background-color: #cccc;
+}
+.lSSlideOuter .lSPager.lSpg > li.active a {
+  background-color: $secondColor;
+}
+.lSSlideOuter .lSPager.lSpg {
+  margin-top: 20px !important;
+}
+/********************************
+  end contact section style
+*********************************/
+
+/********************************
+  start our_team section style
+*********************************/
+.our_team {
+  .our_team_member {
+    margin-bottom: 30px;
+    .team_member {
+      .member_img {
+        margin-bottom: 10px;
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      .member_text {
+        h2 {
+          font-size: 18px;
+        }
+      }
+      .member_social_icon {
+        a {
+          i {
+            color: $secondColor;
+          }
+        }
+      }
+    }
+  }
+}
+/********************************
+  end our_team section style
+*********************************/
+
+/********************************
+  start testamonial section style
+*********************************/
+.testamonial {
+  background-color: $section-background;
+  .head {
+    color: $secondColor;
+    i {
+      color: $black;
+    }
+  }
+  .testamonial_container {
+    margin-top: 20px;
+    .testamonial_content {
+      background-color: $white;
+      padding: 10px 20px;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: $box-shadow;
+      i {
+        color: $secondColor;
+        font-size: 3em;
+        margin-bottom: 15px;
+      }
+      p {
+        line-height: 1.8;
+        margin-bottom: 50px;
+        margin-top: 40px;
+      }
+      .testamonial_img {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+          object-fit: cover;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .stars {
+      margin-top: 40px;
+      i {
+        color: goldenrod;
+      }
+    }
+  }
+}
+/********************************
+  end testamonial section style
+*********************************/
+
+/********************************
+  start news section style
+*********************************/
+.news {
+  .news_content {
+    padding: 20px;
+
+    transition: $transition;
+
+    .news_text {
+      h4 {
+        transition: $transition;
+      }
+    }
+    &:hover {
+      box-shadow: $box-shadow;
+      .news_text {
+        h4 {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+/********************************
+  end news section style
+*********************************/
+
+/********************************
+  start support section style
+*********************************/
+.support {
+  background-color: $section-background;
+  .head {
+    color: $secondColor;
+    i {
+      color: $black;
+    }
+  }
+}
+/********************************
+  end support section style
+*********************************/
+
+/********************************
+  start responsive  style
+*********************************/
+@media (max-width: 991px) {
+  .home {
+    padding: 10px;
+    @include centered;
+  }
+  .navbar {
+    background-color: $white !important;
+  }
+  .navbar-toggler,
+  .navbar-toggler:focus {
+    border: none;
+    i {
+      font-size: 24px;
+    }
+  }
+  .meeting .list-group .list-group-item {
+    width: 100%;
+    font-size: 16px;
+  }
+  .tab-pane {
+    margin-bottom: 20px;
+  }
+  .services_text {
+    margin-top: 20px;
+  }
+  .contact .contact_text {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact .head {
+    margin: 5px auto;
+  }
+  .contact .contact_text h1 {
+    width: 100%;
+  }
+  .contact .contact_text a {
+    margin-right: auto;
+  }
+  .contact .contact_links {
+    text-align: center;
+  }
+  .contact .contact_links .contact_icon {
+    margin: 10px auto;
+  }
+  .our_team .mx-auto.font-weight-bold {
+    text-align: center;
+  }
+}
+/********************************
+  end responsive  style
+*********************************/

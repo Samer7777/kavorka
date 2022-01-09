@@ -1,0 +1,15 @@
+@import "./variables";
+@mixin centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin mainBtn {
+  color: $white;
+  background-color: $mainColor;
+}
+@mixin circule {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
